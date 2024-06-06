@@ -1,0 +1,20 @@
+1.1 Setup
+
+Alterei a chave "bookId" para "_id" de modo a ficar com a formatação bem reconhecida do mongodb
+Para isso, utilizei o script.py que me deu como output o ficheiro livros.json
+Nesse ficheiro alterei também as strings que correspondiam a listas para listas bem definidas, e passei o campo author também a lista, uma vez que pode existir mais que um autor de um livro.
+
+De seguida, utilizei o seguinte comando para importar para a minha db em mongo:
+mongoimport -d livros -c livros --file livros.json --jsonArray
+para importar para mongo
+
+Depois disso,testei a db utilizando:
+mongosh
+show dbs
+use livros
+show collections
+db.livros.count(), verificando o número total de livros
+Utilizei ainda db.contratos.find() para verificar que todos os dados estavam inseridos como desejado
+Desta forma, considerei ter os dados de forma correta na base de dados, confirmando também a sua persistênica em mongodb.
+
+-----------------------------------------------------
